@@ -33,7 +33,11 @@ SECRET_KEY = 'django-insecure-qwzk(p(_i_i=&1h33kw%itc1@*+ow0&1wui+#d$*^e43a$$z&1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'taskmanager-backend-3d2y.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -54,18 +58,17 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-
 
 
 ROOT_URLCONF = 'core.urls'
